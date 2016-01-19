@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div >
+      <ul class="tasks">
+        <li ng-repeat="task in tasks | filter:{obj_status:'active'}" class="thumbnail">
+
+          <a class="hiPriority" href="#/tasks/{{task.id}}" ng-show="task.is_high_priority"> {{task.name}}</a>
+          <a href="#/tasks/{{task.id}}" ng-show="!task.is_high_priority">{{task.name}}</a>
+
+          <p>Тег(и):</p>
+          <ul>
+            <li ng-repeat="tag in task.tags">
+              {{tag}}
+            </li>
+          </ul>
+          <p> </p>
+
+          <p>Время потраченное на задачу: {{task.actual_effort}}</p>
+          <p>Общая оценка задачи: {{task.estimated_effort}}</p>
+          <p>Дата окончания задачи {{task.due_date | date:'dd.MM.yy'}} в {{task.due_date | date:'HH:mm'}} </p>
+        </li>
+      </ul>
+  </div>
+</div>

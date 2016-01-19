@@ -1,0 +1,10 @@
+<h2> <a href ng-click="editName = !editName">Имя: {{tasks[num].name}}</a></h2>
+
+<form action="http://example.org/foo/bar" method="put" ng-show="editName">
+  Редактируем имя :
+  <input type="text" value="{{tasks[num].name}}">
+  <input type="submit" value="Submit">
+
+</form>
+<br>
+<p>Описание: {{tasks[num].description}}</p>
